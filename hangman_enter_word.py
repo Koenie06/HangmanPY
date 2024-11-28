@@ -153,4 +153,4 @@ def Hangman():
     root.mainloop()
 
 
-sys.modules[__name__] = Hangman
+Hangman()
