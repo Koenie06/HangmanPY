@@ -51,7 +51,7 @@ def Hangman():
     photos = load_images()
 
     api_url = 'https://api.api-ninjas.com/v1/randomword'
-    response = requests.get(api_url, headers={'X-Api-Key': '62FA8Cp+Bn7mFImCj9j9Bg==nUBRolcsGVjInDMR'})
+    response = requests.get(api_url, headers={'X-Api-Key': ''})
     if response.status_code == requests.codes.ok:
         wordInput = (json.loads(response.text))['word'][0]
     else:
