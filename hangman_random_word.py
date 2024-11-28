@@ -30,13 +30,13 @@ def Hangman():
 
     def load_images():
         image_paths = [
-            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang5.png"),
-            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang6.png"),
-            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang7.png"),
-            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang8.png"),
-            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang9.png"),
-            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang10.png"),
-            os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang11.png")
+            os.path.join(os.getcwd(), "images/hang5.png"),
+            os.path.join(os.getcwd(), "images/hang6.png"),
+            os.path.join(os.getcwd(), "images/hang7.png"),
+            os.path.join(os.getcwd(), "images/hang8.png"),
+            os.path.join(os.getcwd(), "images/hang9.png"),
+            os.path.join(os.getcwd(), "images/hang10.png"),
+            os.path.join(os.getcwd(), "images/hang11.png")
         ]
 
         photos = []
@@ -50,10 +50,10 @@ def Hangman():
 
     photos = load_images()
 
-    api_url = 'https://api.api-ninjas.com/v1/randomword'
-    response = requests.get(api_url, headers={'X-Api-Key': '62FA8Cp+Bn7mFImCj9j9Bg==nUBRolcsGVjInDMR'})
+    api_url = 'https://random-word-form.herokuapp.com/random/noun'
+    response = requests.get(api_url)
     if response.status_code == requests.codes.ok:
-        wordInput = (json.loads(response.text))['word'][0]
+        wordInput = (json.loads(response.text))[0]
     else:
         print("Error:", response.status_code, response.text)
 
