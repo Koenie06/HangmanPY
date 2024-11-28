@@ -32,12 +32,29 @@ buttonBoard = [
 stopGame = False
 quitGame = False
 
-photos = [Image.open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang5.png")),
-Image.open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang6.png")), Image.open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang7.png")), Image.open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang8.png")),
-Image.open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang9.png")), Image.open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang10.png")), Image.open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "images/hang11.png"))]
+def load_images():
+    image_paths = [
+        os.path.join(os.getcwd(), "images/hang5.png"),
+        os.path.join(os.getcwd(), "images/hang6.png"),
+        os.path.join(os.getcwd(), "images/hang7.png"),
+        os.path.join(os.getcwd(), "images/hang8.png"),
+        os.path.join(os.getcwd(), "images/hang9.png"),
+        os.path.join(os.getcwd(), "images/hang10.png"),
+        os.path.join(os.getcwd(), "images/hang11.png")
+    ]
+
+    photos = []
+    for path in image_paths:
+        try:
+            image = Image.open(path)
+            photos.append(image)
+        except Exception as e:
+            print(e)
+    return photos
 
 def Hangman():
     global wordInput
+    photos = load_images()
     dialog = customtkinter.CTkInputDialog(text="Type in a word:", title="Hangman Input")
     wordInput = dialog.get_input()
     while wordInput == None or not wordInput.isalpha() or len(wordInput) < 3:
