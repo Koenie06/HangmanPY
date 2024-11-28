@@ -1,4 +1,4 @@
-import sys, random, os
+import os
 from tkinter import *
 import customtkinter
 from PIL import Image
