@@ -11,8 +11,8 @@ Welcome to HangmanPY, a classic Hangman game implemented in Python!
 - [License](#license)
 
 ## Introduction
-HangmanPY is a simple and fun game where you guess the letters of a hidden word. This project is perfect for beginners to practice their Python skills. There are 2 options,
-Option 1: The hangman_enter_word.py, you can enter your own word for the hangman.
+HangmanPY is a simple and fun game where you guess the letters of a hidden word. This project is perfect for beginners to practice their Python skills. There are 2 options.. <br />
+Option 1: The hangman_enter_word.py, you can enter your own word for the hangman. <br />
 Option 2: The hangman_random_word.py where you get a random word from a API.
 
 ## Features
